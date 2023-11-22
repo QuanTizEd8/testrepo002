@@ -1,6 +1,7 @@
 """General tests"""  # noqa: D400
 
 
+# Self
 import testrepo002 as pkg
 
 

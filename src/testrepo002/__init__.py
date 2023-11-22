@@ -1,6 +1,6 @@
 """testrepo002
 
-Python Projects Perfected: Innovate, Develop, and Deploy Effortlessly! 
+Python Projects Perfected: Innovate, Develop, and Deploy Effortlessly!
 
 testrepo002 is
 a free and open-source toolkit <b>empowering the development of open-source Python projects on

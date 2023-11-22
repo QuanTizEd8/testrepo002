@@ -51,10 +51,10 @@ body:
     label: 'To submit an issue, please agree to the following terms and conditions:'
     options:
     - label: I have read the [Contributing Guidelines](https://github.com/QuanTizEd8/testrepo002/blob/main/CONTRIBUTING.md)
-        and am following the [Bug Report 
+        and am following the [Bug Report
         Guidelines](https://quantized8.github.io/testrepo002/contribute/feedback/report).
       required: true
-    - label: I have read, understood, and agree to follow the [Code of 
+    - label: I have read, understood, and agree to follow the [Code of
         Conduct](https://github.com/QuanTizEd8/testrepo002/blob/main/CODE_OF_CONDUCT.md).
       required: true
 - type: markdown
