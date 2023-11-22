@@ -1,0 +1,45 @@
+# Install package from a given source and run unit-tests.
+# Install the package and run tests on a matrix of supported Python versions and operating systems.
+
+name: '[Callable]: Package - Test'
+
+on:
+  workflow_call:
+    inputs:
+      metadata:
+        type: string
+        required: true
+        description: |
+          CI metadata as a JSON string.
+      config:
+        type: string
+        required: true
+        description: |
+          CI configuration as a JSON string.
+      package-source:
+        type: string
+        default: GitHub
+        required: false
+        description: Installation source of the package; one of 'GitHub', 'TestPyPI', 'PyPI'.
+
+jobs:
+
+  test:
+    name: '${{ matrix.os }} - Py ${{ matrix.python-version }}'
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ${{ fromJson(inputs.metadata).package.github_runners }}
+        python-version: ${{ fromJson(inputs.metadata).package.python_versions }}
+    env:
+      OS: ${{ matrix.os }}
+      PYTHON: ${{ matrix.python-version }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: repodynamics/pytests@v1
+        with:
+          config: ${{ inputs.config }}
+          metadata: ${{ inputs.metadata }}
+          package-source: ${{ inputs.package-source }}
+          python-version: ${{ matrix.python-version }}
+          os: ${{ matrix.os }}
