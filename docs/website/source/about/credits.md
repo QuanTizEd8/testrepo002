@@ -1,7 +1,7 @@
 # Credits
 
 
-## Collaborators
 
+## Collaborators
 
 ## Contributors
